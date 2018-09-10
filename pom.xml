@@ -103,7 +103,18 @@
 		    <version>1.18.0</version>
 		    <scope>provided</scope>
 		</dependency>
-		        
+		
+		<dependency>
+		    <groupId>org.liquibase</groupId>
+		     <artifactId>liquibase-core</artifactId>
+		      <version>3.5.1</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.liquibase</groupId>
+		    <artifactId>liquibase-maven-plugin</artifactId>
+		    <version>3.5.1</version>
+		</dependency>
     </dependencies>
     <build>
         <plugins>
@@ -118,6 +129,21 @@
                     </webApp>
                 </configuration>
             </plugin>
+            <plugin>
+		        <groupId>org.liquibase</groupId>
+		        <artifactId>liquibase-maven-plugin</artifactId>
+		        <version>3.5.1</version>
+		        <configuration>                  
+		            <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+		        </configuration>
+		        <!-- <configuration>                                                           
+			        <changeLogFile>db.changelogs/my-changelog-master.xml</changeLogFile>  
+			        <driver>com.mysql.jdbc.Driver</driver>                                
+			        <url>jdbc:mysql://localhost:3306/MyDB</url>                           
+			        <username>admin-user</username>                                             
+			        <password>*****</password> 
+			    </configuration>    -->
+		    </plugin>
         </plugins>
     </build>
 </project>
